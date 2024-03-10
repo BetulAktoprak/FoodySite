@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@Html.Partial("PartialHead")
+
+<body>
+
+    @Html.Partial("PartialNavbar")
+
+    @Html.Partial("PartialPageHeader")
+
+    
+    @await Component.InvokeAsync("ListByCategoryComponentPartial", new { id = ViewBag.x })
+
+    @await Component.InvokeAsync("FooterComponentPartial")
+
+    @await Component.InvokeAsync("ScriptComponentPartial")
+
+</body>
+
+</html>

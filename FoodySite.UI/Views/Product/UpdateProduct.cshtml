@@ -1,0 +1,32 @@
+﻿@model FoodySite.DataAccess.Models.Product
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <h2>Ürün Güncelleme</h2>
+        <br />
+        <label>Ürün Numarası</label>
+        <input type="text" asp-for="ProductId" class="form-control" readonly />
+        <br />
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" asp-for="ProductName" style="border:solid" />
+        <br />
+        <label>Ürün Görseli Url</label>
+        <input type="text" class="form-control" asp-for="ImageUrl" style="border:solid" />
+        <br />
+        <label>Eski Fiyat</label>
+        <input type="text" class="form-control" asp-for="OldPrice" style="border:solid" />
+        <br />
+        <label>Yeni Fiyat</label>
+        <input type="text" class="form-control" asp-for="NewPrice" style="border:solid" />
+        <br />
+        <label>Kategori Seçiniz</label>
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Categories, new { @class = "form-control", style="border:solid;" }) 
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+</form>
+

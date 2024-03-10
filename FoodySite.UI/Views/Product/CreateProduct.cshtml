@@ -1,0 +1,29 @@
+﻿@model FoodySite.DataAccess.Models.Product
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <h2>Yeni Ürün</h2>
+        <br /><br />
+        <label>Ürün Adı</label>
+        <input type="text" class="form-control" asp-for="ProductName" style="border:solid" />
+        <br />
+        <label>Ürün Görseli Url</label>
+        <input type="text" class="form-control" asp-for="ImageUrl" style="border:solid" />
+        <br />
+        <label>Eski Fiyat</label>
+        <input type="text" class="form-control" asp-for="OldPrice" style="border:solid" />
+        <br />
+        <label>Yeni Fiyat</label>
+        <input type="text" class="form-control" asp-for="NewPrice" style="border:solid" />
+        <br />
+        <label>Kategori Adı</label>
+        @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.Categories, new { @class = "form-control", style = "border:solid;" })
+        <br />
+        <button class="btn btn-info">Ürünü Kaydet</button>
+    </div>
+</form>
+

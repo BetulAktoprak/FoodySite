@@ -1,0 +1,21 @@
+﻿@model FoodySite.DataAccess.Models.Category
+
+@{
+    ViewData["Title"] = "UpdateCategory";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div class="container">
+        <h2>Kategori Güncelleme</h2>
+        <br />
+        <label>Kategori Numarası</label>
+        <input type="text" class="form-control" asp-for="CategoryId" style="border:solid" />
+        <br />
+        <label>Kategori Adı</label>
+        <input type="text" class="form-control" asp-for="CategoryName" style="border:solid" />
+        <br />
+        <button class="btn btn-info">Kaydet</button>
+    </div>
+</form>
+
